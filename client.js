@@ -12,10 +12,20 @@ const connect = () => {
   
   conn.on('connect', () => {
     console.log('Connected succesfully.');
-  });
-  //sends back a msg to the server after the connection established
-  conn.on('connect', () => {
+    //sends back a msg and commands to the server
     conn.write('Name: VER');
+    let i = 0;
+    const interval = setInterval(() => {
+      i ++;
+      //conn.write('Move: up');
+      if (i === 50) {
+        clearInterval(interval);
+      }
+    }, 150);
+    
+    // setTimeout(() => {
+    //   conn.write('Move: left');
+    // }, 400);
   });
 
   return conn;
