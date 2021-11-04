@@ -13,15 +13,12 @@ const setupInput = (conn) => { //takes in conn object returned by connect()
   return stdin;
 };
 
-
-//when user inputs 'ctrl+c', exit the program
 const handleUserInput = (key) => {
-
-  if (key === '\u0003') {
+  if (key === '\u0003') { //exit command'ctrl+c'
     process.exit();
   }
   if (key === 'w') {
-    connection.write('Move: up'); //DOESNT WORK
+    connection.write('Move: up');
   }
   if (key === 'a') {
     connection.write('Move: left');
@@ -32,10 +29,9 @@ const handleUserInput = (key) => {
   if (key === 'd') {
     connection.write('Move: right');
   }
-  if (key === "p") {
-    connection.write("Say: Let's play!!!");
+  if (key === "m") {
+    connection.write("Say: Here I am!!!");
   }
 };
-
 
 module.exports = { setupInput };
