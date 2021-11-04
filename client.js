@@ -11,17 +11,18 @@ const connect = () => {
   conn.setEncoding("utf8");
   
   conn.on('connect', () => {
-    console.log('Connected succesfully.');
     //sends back a msg and commands to the server
-    conn.write('Name: VER');
-    let i = 0;
-    const interval = setInterval(() => {
-      i ++;
-      //conn.write('Move: up');
-      if (i === 50) {
-        clearInterval(interval);
-      }
-    }, 150);
+    console.log('Connected succesfully.');
+    conn.write('Name: YAY');
+
+    // let i = 0;
+    // const interval = setInterval(() => {
+    //   i ++;
+    //   //conn.write('Move: up');
+    //   if (i === 50) {
+    //     clearInterval(interval);
+    //   }
+    // }, 150);
     
     // setTimeout(() => {
     //   conn.write('Move: left');
